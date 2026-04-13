@@ -1,29 +1,36 @@
 import React, {Component} from "react";
-import { View, Text, Image, StyleSheet, TextInput } from "react-native";
+import { View, Text, Image, StyleSheet, TextInput, Button } from "react-native";
 
 class Aula03 extends Component {
     render(){
         return(
             <View style={ styles.container}>
-                <View style={ styles.conteudo }>
-
+                <View style={ styles.conteudo}>
                     <Image 
-                        style={ styles.logo }
                         source={ require('../images/Logo_Bola_PNG.png')}
+                        style={ styles.logo}
                     />
-                   <Text style={styles.label}>Nome:</Text>
+                   <Text style={styles.label}>Usuário:</Text>
                    <TextInput 
                        style={ styles.input}
-                   />
+                    />
+                    <Text style={styles.label}>Senha:</Text>
                     <TextInput 
                        style={ styles.input}
                    />
+
+                   <Button 
+                      style={ styles.botao }
+                      title="Entrar"
+                      color="green"
+                      />
+
                 </View>
             </View>
-        )
+        );
     }
 }
-
+ 
 export default Aula03;
 
 const styles = StyleSheet.create({
@@ -32,7 +39,9 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'black'
+        backgroundColor: 'black',
+        border: 1,
+        borderColor: "red"
     },
 
     conteudo: {
@@ -49,8 +58,13 @@ const styles = StyleSheet.create({
         height: 100,
     },
 
-    label: {
+    textoCampo: {
         color: 'white'
+    },
+
+    label: {
+        color: 'white',
+        flex: 1,
     },
 
     input: {
@@ -62,4 +76,12 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 5
     },
+
+    botao: {
+        backgroundColor: 'green',
+        color: 'black',
+        padding: 20,
+        borderRadius: 5
+    }
+
 });
